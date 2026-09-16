@@ -1,1 +1,7 @@
 
+data/*
+!data/README.md
+.venv/
+.idea/.DS_Store
+.DS_Store
+.idea/
