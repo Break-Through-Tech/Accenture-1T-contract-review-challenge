@@ -1,0 +1,91 @@
+strategy,category,spans,contained_within_budget,coverage_pct
+paragraph_only,Governing Law,374,278,74.332
+fixed_510_0,Governing Law,374,341,91.176
+fixed_510_64,Governing Law,374,372,99.465
+fixed_510_128,Governing Law,374,374,100.0
+fixed_510_256,Governing Law,374,374,100.0
+hybrid_510_0,Governing Law,374,373,99.733
+hybrid_510_64,Governing Law,374,374,100.0
+hybrid_510_128,Governing Law,374,374,100.0
+hybrid_510_256,Governing Law,374,374,100.0
+paragraph_only,Renewal Term,179,131,73.184
+fixed_510_0,Renewal Term,179,154,86.034
+fixed_510_64,Renewal Term,179,177,98.883
+fixed_510_128,Renewal Term,179,177,98.883
+fixed_510_256,Renewal Term,179,177,98.883
+hybrid_510_0,Renewal Term,179,177,98.883
+hybrid_510_64,Renewal Term,179,177,98.883
+hybrid_510_128,Renewal Term,179,177,98.883
+hybrid_510_256,Renewal Term,179,178,99.441
+paragraph_only,Non-Compete,200,127,63.5
+fixed_510_0,Non-Compete,200,169,84.5
+fixed_510_64,Non-Compete,200,186,93.0
+fixed_510_128,Non-Compete,200,194,97.0
+fixed_510_256,Non-Compete,200,198,99.0
+hybrid_510_0,Non-Compete,200,194,97.0
+hybrid_510_64,Non-Compete,200,196,98.0
+hybrid_510_128,Non-Compete,200,198,99.0
+hybrid_510_256,Non-Compete,200,199,99.5
+paragraph_only,Anti-Assignment,517,382,73.888
+fixed_510_0,Anti-Assignment,517,467,90.329
+fixed_510_64,Anti-Assignment,517,498,96.325
+fixed_510_128,Anti-Assignment,517,508,98.259
+fixed_510_256,Anti-Assignment,517,516,99.807
+hybrid_510_0,Anti-Assignment,517,508,98.259
+hybrid_510_64,Anti-Assignment,517,515,99.613
+hybrid_510_128,Anti-Assignment,517,515,99.613
+hybrid_510_256,Anti-Assignment,517,517,100.0
+paragraph_only,Termination For Convenience,205,135,65.854
+fixed_510_0,Termination For Convenience,205,187,91.22
+fixed_510_64,Termination For Convenience,205,201,98.049
+fixed_510_128,Termination For Convenience,205,203,99.024
+fixed_510_256,Termination For Convenience,205,204,99.512
+hybrid_510_0,Termination For Convenience,205,204,99.512
+hybrid_510_64,Termination For Convenience,205,205,100.0
+hybrid_510_128,Termination For Convenience,205,204,99.512
+hybrid_510_256,Termination For Convenience,205,205,100.0
+paragraph_only,Exclusivity,332,212,63.855
+fixed_510_0,Exclusivity,332,292,87.952
+fixed_510_64,Exclusivity,332,312,93.976
+fixed_510_128,Exclusivity,332,322,96.988
+fixed_510_256,Exclusivity,332,330,99.398
+hybrid_510_0,Exclusivity,332,328,98.795
+hybrid_510_64,Exclusivity,332,328,98.795
+hybrid_510_128,Exclusivity,332,331,99.699
+hybrid_510_256,Exclusivity,332,331,99.699
+paragraph_only,Uncapped Liability,151,92,60.927
+paragraph_only,Cap On Liability,554,376,67.87
+fixed_510_0,Uncapped Liability,151,126,83.444
+fixed_510_0,Cap On Liability,554,468,84.477
+fixed_510_64,Uncapped Liability,151,134,88.742
+fixed_510_64,Cap On Liability,554,520,93.863
+fixed_510_128,Uncapped Liability,151,148,98.013
+fixed_510_128,Cap On Liability,554,548,98.917
+fixed_510_256,Uncapped Liability,151,150,99.338
+fixed_510_256,Cap On Liability,554,551,99.458
+hybrid_510_0,Uncapped Liability,151,149,98.675
+hybrid_510_0,Cap On Liability,554,549,99.097
+hybrid_510_64,Uncapped Liability,151,149,98.675
+hybrid_510_64,Cap On Liability,554,550,99.278
+hybrid_510_128,Uncapped Liability,151,151,100.0
+hybrid_510_128,Cap On Liability,554,553,99.819
+hybrid_510_256,Uncapped Liability,151,151,100.0
+hybrid_510_256,Cap On Liability,554,553,99.819
+paragraph_only,Audit Rights,538,403,74.907
+fixed_510_0,Audit Rights,538,473,87.918
+fixed_510_64,Audit Rights,538,520,96.654
+fixed_510_128,Audit Rights,538,534,99.257
+fixed_510_256,Audit Rights,538,537,99.814
+hybrid_510_0,Audit Rights,538,535,99.442
+hybrid_510_64,Audit Rights,538,533,99.071
+hybrid_510_128,Audit Rights,538,535,99.442
+hybrid_510_256,Audit Rights,538,537,99.814
+paragraph_only,Change Of Control,191,125,65.445
+fixed_510_0,Change Of Control,191,162,84.817
+fixed_510_64,Change Of Control,191,180,94.241
+fixed_510_128,Change Of Control,191,190,99.476
+fixed_510_256,Change Of Control,191,189,98.953
+hybrid_510_0,Change Of Control,191,187,97.906
+hybrid_510_64,Change Of Control,191,188,98.429
+hybrid_510_128,Change Of Control,191,191,100.0
+hybrid_510_256,Change Of Control,191,191,100.0
