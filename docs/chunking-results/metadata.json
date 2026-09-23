@@ -1,0 +1,79 @@
+{
+  "source_commit": "1ce80db",
+  "split": "train",
+  "contracts": 408,
+  "priority_spans": 3241,
+  "categories": [
+    "Cap On Liability",
+    "Uncapped Liability",
+    "Governing Law",
+    "Anti-Assignment",
+    "Change Of Control",
+    "Termination For Convenience",
+    "Exclusivity",
+    "Non-Compete",
+    "Renewal Term",
+    "Audit Rights"
+  ],
+  "tokenizer": "google-bert/bert-base-uncased",
+  "tokenizer_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "tokenizers_version": "0.22.1",
+  "tokenizer_sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+  "source_sha256": "7de21d2bb741ac939e2a839ef9640634a5e0f9f40ea2b82c6833baf7db33dab4",
+  "text_token_limit": 510,
+  "original_tokens": 4547807,
+  "priority_spans_above_limit": 1,
+  "max_priority_span_tokens": 558,
+  "end_boundary_counts": {
+    "paragraph_only": {
+      "paragraph": 62233
+    },
+    "fixed_510_0": {
+      "document_end": 408,
+      "token_limit": 8608,
+      "retokenization_limit": 108
+    },
+    "fixed_510_64": {
+      "document_end": 408,
+      "token_limit": 9781,
+      "retokenization_limit": 151
+    },
+    "fixed_510_128": {
+      "document_end": 408,
+      "token_limit": 11406,
+      "retokenization_limit": 151
+    },
+    "fixed_510_256": {
+      "document_end": 408,
+      "token_limit": 17045,
+      "retokenization_limit": 245
+    },
+    "hybrid_510_0": {
+      "document_end": 408,
+      "paragraph": 7749,
+      "sentence": 2003,
+      "token_limit": 227
+    },
+    "hybrid_510_64": {
+      "document_end": 408,
+      "paragraph": 9098,
+      "sentence": 2256,
+      "token_limit": 272,
+      "retokenization_limit": 7
+    },
+    "hybrid_510_128": {
+      "document_end": 408,
+      "paragraph": 10743,
+      "sentence": 2767,
+      "token_limit": 341,
+      "retokenization_limit": 7
+    },
+    "hybrid_510_256": {
+      "document_end": 408,
+      "paragraph": 15837,
+      "sentence": 5537,
+      "token_limit": 853,
+      "retokenization_limit": 17
+    }
+  }
+}
