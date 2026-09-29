@@ -13,6 +13,7 @@ dependencies = [
     "ipykernel>=7.3.0",
     "nbformat>=5.11.1",
     "matplotlib>=3.11.1",
+    "tokenizers==0.22.1",
 ]
 
 [build-system]
