@@ -1,0 +1,76 @@
+{
+  "description": "Synthetic interface example; 12-token limit and 3-token overlap only for readability. No production configuration changes.",
+  "config": {
+    "max_tokens": 12,
+    "overlap": 3
+  },
+  "contracts": [
+    {
+      "contract": "synthetic-example",
+      "text": "The laws of New York govern this agreement. The supplier may audit records every year. Ordinary delivery instructions follow here without extra obligations. Packages arrive on Monday morning. Please send delivery updates to the office."
+    }
+  ],
+  "chunks": [
+    {
+      "contract": "synthetic-example",
+      "split": "train",
+      "chunk_id": "dcda93f0ba3f777be43a4169be926b6a2c415b1b303cf60d3bc9d1e4d0671469:0:44",
+      "start": 0,
+      "end": 44,
+      "text": "The laws of New York govern this agreement. ",
+      "n_tokens": 9
+    },
+    {
+      "contract": "synthetic-example",
+      "split": "train",
+      "chunk_id": "dcda93f0ba3f777be43a4169be926b6a2c415b1b303cf60d3bc9d1e4d0671469:28:87",
+      "start": 28,
+      "end": 87,
+      "text": "this agreement. The supplier may audit records every year. ",
+      "n_tokens": 11
+    },
+    {
+      "contract": "synthetic-example",
+      "split": "train",
+      "chunk_id": "dcda93f0ba3f777be43a4169be926b6a2c415b1b303cf60d3bc9d1e4d0671469:75:157",
+      "start": 75,
+      "end": 157,
+      "text": "every year. Ordinary delivery instructions follow here without extra obligations. ",
+      "n_tokens": 12
+    },
+    {
+      "contract": "synthetic-example",
+      "split": "train",
+      "chunk_id": "dcda93f0ba3f777be43a4169be926b6a2c415b1b303cf60d3bc9d1e4d0671469:138:192",
+      "start": 138,
+      "end": 192,
+      "text": "extra obligations. Packages arrive on Monday morning. ",
+      "n_tokens": 9
+    },
+    {
+      "contract": "synthetic-example",
+      "split": "train",
+      "chunk_id": "dcda93f0ba3f777be43a4169be926b6a2c415b1b303cf60d3bc9d1e4d0671469:176:235",
+      "start": 176,
+      "end": 235,
+      "text": "Monday morning. Please send delivery updates to the office.",
+      "n_tokens": 11
+    }
+  ],
+  "spans": [
+    {
+      "contract": "synthetic-example",
+      "category": "Governing Law",
+      "start": 0,
+      "end": 20,
+      "text": "The laws of New York"
+    },
+    {
+      "contract": "synthetic-example",
+      "category": "Audit Rights",
+      "start": 44,
+      "end": 86,
+      "text": "The supplier may audit records every year."
+    }
+  ]
+}
