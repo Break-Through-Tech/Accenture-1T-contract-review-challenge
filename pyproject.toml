@@ -14,6 +14,7 @@ dependencies = [
     "nbformat>=5.11.1",
     "matplotlib>=3.11.1",
     "tokenizers==0.22.1",
+    "scikit-learn>=1.5",
 ]
 
 [build-system]
