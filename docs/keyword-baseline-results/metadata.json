@@ -1,0 +1,27 @@
+{
+  "categories": [
+    "Cap On Liability",
+    "Uncapped Liability",
+    "Governing Law",
+    "Anti-Assignment",
+    "Change Of Control",
+    "Termination For Convenience",
+    "Exclusivity",
+    "Non-Compete",
+    "Renewal Term",
+    "Audit Rights"
+  ],
+  "rules": 26,
+  "decision": "positive when at least one rule of the category matches",
+  "rule_development_split": "train",
+  "train_labeled_chunks_sha256": "f7b7c43c41e24d0814f04a100e3819a1166618713ca72f549eb43f3f13898df3",
+  "test_labeled_chunks_sha256": "8acfbae4c652c915c246222f6c7d87c2ed5d2f73c943dbed599b71d415e2861b",
+  "train": {
+    "contracts": 408,
+    "chunks": 14266
+  },
+  "test": {
+    "contracts": 102,
+    "chunks": 3096
+  }
+}
