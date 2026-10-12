@@ -1,0 +1,27 @@
+category,rule,fired,true_positive,precision,recall,only_rule_fired,only_rule_true_positive
+Cap On Liability,in_no_event_liable,26,18,0.6923,0.1682,7,0
+Cap On Liability,excluded_damage_types,73,53,0.726,0.4953,50,31
+Cap On Liability,amount_ceiling,11,11,1.0,0.1028,3,3
+Uncapped Liability,cap_with_carve_out,38,8,0.2105,0.4706,38,8
+Governing Law,governed_by_laws,96,88,0.9167,0.7586,17,14
+Governing Law,laws_govern,10,8,0.8,0.069,4,2
+Governing Law,construed_under_laws,74,66,0.8919,0.569,9,6
+Governing Law,governing_law_heading,91,69,0.7582,0.5948,26,6
+Anti-Assignment,assign_needs_consent,105,90,0.8571,0.6716,34,22
+Anti-Assignment,may_not_assign,77,52,0.6753,0.3881,31,9
+Anti-Assignment,no_party_assigns,33,32,0.9697,0.2388,3,2
+Anti-Assignment,void_assignment,20,18,0.9,0.1343,5,3
+Change Of Control,change_of_control,60,24,0.4,0.4138,59,23
+Change Of Control,merger_triggers_right,20,3,0.15,0.0517,19,2
+Termination For Convenience,terminate_without_cause,16,14,0.875,0.3182,11,9
+Termination For Convenience,terminate_at_any_time,18,10,0.5556,0.2273,13,5
+Exclusivity,exclusive,218,52,0.2385,0.7647,217,51
+Exclusivity,sole_supplier,4,1,0.25,0.0147,3,0
+Non-Compete,non_compete_term,88,31,0.3523,0.5849,61,13
+Non-Compete,restricted_competition,38,26,0.6842,0.4906,11,8
+Renewal Term,automatic_renewal,24,16,0.6667,0.5161,11,5
+Renewal Term,renewal_period,22,10,0.4545,0.3226,11,1
+Renewal Term,successive_periods,11,11,1.0,0.3548,6,6
+Audit Rights,audit,118,56,0.4746,0.6222,86,28
+Audit Rights,inspect_records,65,39,0.6,0.4333,32,13
+Audit Rights,access_to_records,14,6,0.4286,0.0667,7,2
