@@ -1,0 +1,151 @@
+category,rank,term,weight
+Cap On Liability,1,damages,12.5892
+Cap On Liability,2,consequential,11.8763
+Cap On Liability,3,liability,11.6637
+Cap On Liability,4,be liable,8.5509
+Cap On Liability,5,liable,8.1091
+Cap On Liability,6,remedy,7.6057
+Cap On Liability,7,punitive,7.309
+Cap On Liability,8,for any,6.8783
+Cap On Liability,9,special,6.8364
+Cap On Liability,10,indirect,6.7251
+Cap On Liability,11,sole remedy,6.6919
+Cap On Liability,12,incidental,6.4853
+Cap On Liability,13,liable to,6.1167
+Cap On Liability,14,exclusive remedy,6.0166
+Cap On Liability,15,loss of,5.9704
+Uncapped Liability,1,damages,8.3959
+Uncapped Liability,2,consequential,6.9846
+Uncapped Liability,3,indemnification obligations,6.4889
+Uncapped Liability,4,liability,6.3876
+Uncapped Liability,5,punitive,6.3532
+Uncapped Liability,6,incidental,5.7968
+Uncapped Liability,7,liability except,5.7036
+Uncapped Liability,8,indemnification,5.5572
+Uncapped Liability,9,of liability,5.2622
+Uncapped Liability,10,lost,4.8366
+Uncapped Liability,11,indirect,4.8284
+Uncapped Liability,12,under section,4.7244
+Uncapped Liability,13,be liable,4.5705
+Uncapped Liability,14,breach of,4.506
+Uncapped Liability,15,party be,4.3928
+Governing Law,1,governed,15.0318
+Governing Law,2,laws of,14.6064
+Governing Law,3,the laws,14.1194
+Governing Law,4,governed by,13.4636
+Governing Law,5,be governed,13.2856
+Governing Law,6,laws,12.2374
+Governing Law,7,the state,12.0092
+Governing Law,8,state of,11.9514
+Governing Law,9,governing law,10.8924
+Governing Law,10,governing,10.6836
+Governing Law,11,law this,9.5625
+Governing Law,12,state,9.2735
+Governing Law,13,law,8.7132
+Governing Law,14,construed,8.6772
+Governing Law,15,construed in,8.4836
+Anti-Assignment,1,assign,16.9913
+Anti-Assignment,2,assignment,14.9603
+Anti-Assignment,3,consent,10.5595
+Anti-Assignment,4,written consent,9.439
+Anti-Assignment,5,without the,9.0291
+Anti-Assignment,6,consent of,8.6717
+Anti-Assignment,7,prior written,8.2128
+Anti-Assignment,8,the prior,7.6943
+Anti-Assignment,9,may assign,7.2277
+Anti-Assignment,10,be assigned,7.1521
+Anti-Assignment,11,assign this,7.0331
+Anti-Assignment,12,its rights,6.8627
+Anti-Assignment,13,transfer,6.7988
+Anti-Assignment,14,assigned,5.9671
+Anti-Assignment,15,void,5.7932
+Change Of Control,1,change of,13.8366
+Change Of Control,2,of control,13.7023
+Change Of Control,3,change,11.5059
+Change Of Control,4,control,9.6266
+Change Of Control,5,merger,7.0826
+Change Of Control,6,terminate,5.4783
+Change Of Control,7,control of,5.1675
+Change Of Control,8,transfer,4.8264
+Change Of Control,9,merger or,4.5727
+Change Of Control,10,interests,4.3541
+Change Of Control,11,consolidation,4.3225
+Change Of Control,12,in control,4.1432
+Change Of Control,13,change in,4.1049
+Change Of Control,14,terminated,3.9934
+Change Of Control,15,terminate this,3.9819
+Termination For Convenience,1,terminate,12.3402
+Termination For Convenience,2,termination,10.4327
+Termination For Convenience,3,may terminate,10.0936
+Termination For Convenience,4,written notice,9.9129
+Termination For Convenience,5,any time,9.0267
+Termination For Convenience,6,terminate this,8.8932
+Termination For Convenience,7,notice,8.0021
+Termination For Convenience,8,at any,7.9231
+Termination For Convenience,9,without cause,7.7446
+Termination For Convenience,10,days written,6.9708
+Termination For Convenience,11,terminated,6.488
+Termination For Convenience,12,written,6.3235
+Termination For Convenience,13,prior written,6.3228
+Termination For Convenience,14,by giving,6.1217
+Termination For Convenience,15,notice to,6.043
+Exclusivity,1,exclusive,19.0448
+Exclusivity,2,an exclusive,11.8318
+Exclusivity,3,exclusivity,11.6681
+Exclusivity,4,the exclusive,11.0196
+Exclusivity,5,exclusive right,5.7952
+Exclusivity,6,exclusively,5.6788
+Exclusivity,7,products,5.3875
+Exclusivity,8,grants,5.3089
+Exclusivity,9,sell,5.051
+Exclusivity,10,license,4.991
+Exclusivity,11,territory,4.8299
+Exclusivity,12,grant,4.7361
+Exclusivity,13,hereby grants,4.7205
+Exclusivity,14,hereby,4.6368
+Exclusivity,15,right to,4.6283
+Non-Compete,1,competitive,10.9245
+Non-Compete,2,competitor,9.6553
+Non-Compete,3,competing,7.8246
+Non-Compete,4,compete,6.9508
+Non-Compete,5,shall not,5.3687
+Non-Compete,6,competition,5.2144
+Non-Compete,7,products,4.9446
+Non-Compete,8,directly,4.8685
+Non-Compete,9,compete with,4.6693
+Non-Compete,10,competitors,4.4535
+Non-Compete,11,or indirectly,4.4439
+Non-Compete,12,competitive with,4.4253
+Non-Compete,13,during the,4.3866
+Non-Compete,14,indirectly,4.354
+Non-Compete,15,engage,4.3479
+Renewal Term,1,renew,11.1951
+Renewal Term,2,term,11.0463
+Renewal Term,3,automatically,9.9385
+Renewal Term,4,initial term,9.7753
+Renewal Term,5,renewal,8.6717
+Renewal Term,6,one year,8.3808
+Renewal Term,7,year,7.6767
+Renewal Term,8,years,7.3457
+Renewal Term,9,initial,7.1983
+Renewal Term,10,term of,6.7543
+Renewal Term,11,the initial,6.4244
+Renewal Term,12,to renew,5.837
+Renewal Term,13,for successive,5.6093
+Renewal Term,14,term this,5.6
+Renewal Term,15,agreement shall,5.5838
+Audit Rights,1,audit,21.126
+Audit Rights,2,records,18.619
+Audit Rights,3,inspect,10.5028
+Audit Rights,4,inspection,9.4482
+Audit Rights,5,business hours,9.389
+Audit Rights,6,books,8.5639
+Audit Rights,7,hours,7.8317
+Audit Rights,8,normal business,7.6848
+Audit Rights,9,audits,7.5357
+Audit Rights,10,normal,7.0996
+Audit Rights,11,and records,6.9303
+Audit Rights,12,during normal,6.8046
+Audit Rights,13,to inspect,6.7351
+Audit Rights,14,access,6.4117
+Audit Rights,15,access to,5.6265

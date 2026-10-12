@@ -1,0 +1,42 @@
+{
+  "config": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95,
+    "sublinear_tf": true,
+    "lowercase": true,
+    "C": 10.0,
+    "class_weight": "balanced",
+    "threshold": 0.5,
+    "seed": 42
+  },
+  "categories": [
+    "Cap On Liability",
+    "Uncapped Liability",
+    "Governing Law",
+    "Anti-Assignment",
+    "Change Of Control",
+    "Termination For Convenience",
+    "Exclusivity",
+    "Non-Compete",
+    "Renewal Term",
+    "Audit Rights"
+  ],
+  "scikit_learn_version": "1.9.1",
+  "train_labeled_chunks_sha256": "f7b7c43c41e24d0814f04a100e3819a1166618713ca72f549eb43f3f13898df3",
+  "test_labeled_chunks_sha256": "8acfbae4c652c915c246222f6c7d87c2ed5d2f73c943dbed599b71d415e2861b",
+  "train": {
+    "contracts": 408,
+    "chunks": 14266
+  },
+  "test": {
+    "contracts": 102,
+    "chunks": 3096
+  },
+  "vocabulary_size": 324756,
+  "cv_folds": 5,
+  "cv_grouped_by": "contract"
+}
