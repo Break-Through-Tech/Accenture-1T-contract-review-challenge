@@ -20,22 +20,31 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import average_precision_score, precision_recall_fscore_support
-from sklearn.model_selection import GroupKFold
 
 from src.cuad_data import PRIORITY_CATEGORIES
+from src.evaluation import (
+    DEFAULT_THRESHOLD,
+    METRIC_COLUMNS,
+    apply_thresholds,
+    contract_folds,
+    fold_of_rows,
+    score,
+)
 from src.labeling import label_arrays
 
-METRIC_COLUMNS = [
-    "category",
-    "support",
-    "scored_chunks",
-    "masked_chunks",
-    "predicted_positive",
-    "precision",
-    "recall",
-    "f1",
-    "average_precision",
+# METRIC_COLUMNS and score moved to src.evaluation in task #9 so that the
+# keyword rules and October's transformer are scored by the same code. They are
+# re-exported here because this module's own callers already import them.
+__all__ = [
+    "DEFAULT_CONFIG",
+    "METRIC_COLUMNS",
+    "BaselineConfig",
+    "TfidfBaseline",
+    "cross_validate",
+    "evaluate",
+    "fit",
+    "out_of_fold_proba",
+    "score",
 ]
 
 
@@ -52,7 +61,9 @@ class BaselineConfig:
     lowercase: bool = True
     C: float = 10.0
     class_weight: str | None = "balanced"
-    threshold: float = 0.5
+    # The shared starting threshold. Task #9 tunes one per category instead;
+    # see docs/tuned-baseline.md.
+    threshold: float = DEFAULT_THRESHOLD
     seed: int = 42
 
     def to_dict(self) -> dict:
@@ -80,8 +91,15 @@ class TfidfBaseline:
             [clf.predict_proba(features)[:, 1] for clf in self.classifiers]
         )
 
-    def predict(self, texts) -> np.ndarray:
-        return (self.predict_proba(texts) >= self.config.threshold).astype(np.int8)
+    def predict(self, texts, thresholds=None) -> np.ndarray:
+        """0/1 predictions, one column per category.
+
+        ``thresholds`` takes a float, a mapping or one value per category and
+        falls back to the single value in the config.
+        """
+        if thresholds is None:
+            thresholds = self.config.threshold
+        return apply_thresholds(self.predict_proba(texts), thresholds, self.categories)
 
     def top_terms(self, n: int = 15) -> pd.DataFrame:
         """Highest-weighted terms per category, for explaining the baseline."""
@@ -140,76 +158,49 @@ def fit(
     return TfidfBaseline(vectorizer, classifiers, categories, config)
 
 
-def score(
-    labels: np.ndarray,
-    mask: np.ndarray,
-    proba: np.ndarray,
-    categories=PRIORITY_CATEGORIES,
-    threshold: float = DEFAULT_CONFIG.threshold,
-) -> pd.DataFrame:
-    """Per-category precision/recall/F1 plus macro and micro rows.
-
-    Masked pairs are excluded. Micro pools every unmasked (chunk, category) pair.
-    """
-    categories = list(categories)
-    pred = (proba >= threshold).astype(np.int8)
-    rows = []
-    for i, category in enumerate(categories):
-        keep = mask[:, i]
-        y, p = labels[keep, i], pred[keep, i]
-        precision, recall, f1, _ = precision_recall_fscore_support(
-            y, p, average="binary", zero_division=0
-        )
-        ap = average_precision_score(y, proba[keep, i]) if y.any() else float("nan")
-        rows.append(
-            {
-                "category": category,
-                "support": int(y.sum()),
-                "scored_chunks": int(keep.sum()),
-                "masked_chunks": int((~keep).sum()),
-                "predicted_positive": int(p.sum()),
-                "precision": precision,
-                "recall": recall,
-                "f1": f1,
-                "average_precision": ap,
-            }
-        )
-    table = pd.DataFrame(rows, columns=METRIC_COLUMNS)
-    y, p = labels[mask], pred[mask]
-    precision, recall, f1, _ = precision_recall_fscore_support(
-        y, p, average="binary", zero_division=0
-    )
-    counts = {
-        c: int(table[c].sum())
-        for c in ("support", "scored_chunks", "masked_chunks", "predicted_positive")
-    }
-    macro = {
-        "category": "macro avg",
-        **counts,
-        **{
-            c: table[c].mean()
-            for c in ("precision", "recall", "f1", "average_precision")
-        },
-    }
-    micro = {
-        "category": "micro avg",
-        **counts,
-        "precision": precision,
-        "recall": recall,
-        "f1": f1,
-        "average_precision": float("nan"),
-    }
-    table = pd.concat([table, pd.DataFrame([macro, micro])], ignore_index=True)
-    return table.round({"precision": 4, "recall": 4, "f1": 4, "average_precision": 4})
-
-
 def evaluate(
-    model: TfidfBaseline, labeled: pd.DataFrame
+    model: TfidfBaseline, labeled: pd.DataFrame, thresholds=None
 ) -> tuple[pd.DataFrame, np.ndarray]:
-    """Score a fitted model on a labeled chunk table. Returns (metrics, scores)."""
+    """Score a fitted model on a labeled chunk table. Returns (metrics, scores).
+
+    ``thresholds`` defaults to the single value in the model's config, so an
+    untuned call reproduces the task #7 numbers. Pass a mapping from
+    :func:`src.evaluation.tune_thresholds` to score at tuned thresholds.
+    """
     labels, mask = _arrays(labeled, model.categories)
     proba = model.predict_proba(labeled["text"])
-    return score(labels, mask, proba, model.categories, model.config.threshold), proba
+    if thresholds is None:
+        thresholds = model.config.threshold
+    return score(labels, mask, proba, model.categories, thresholds), proba
+
+
+def out_of_fold_proba(
+    labeled: pd.DataFrame,
+    categories=PRIORITY_CATEGORIES,
+    config: BaselineConfig = DEFAULT_CONFIG,
+    n_splits: int = 5,
+    folds: pd.DataFrame | None = None,
+) -> tuple[np.ndarray, pd.DataFrame]:
+    """Predict every training chunk from a model that never saw its contract.
+
+    Returns the (n_chunks, n_categories) score array and the fold table used.
+    Pass ``folds`` to reuse a saved assignment; otherwise one is built with
+    :func:`src.evaluation.contract_folds`.
+
+    These scores are what thresholds are tuned on. Because each chunk is scored
+    by a model fitted without its contract, the overlapping chunks of one
+    contract cannot leak across the split.
+    """
+    categories = list(categories)
+    if folds is None:
+        folds = contract_folds(labeled, n_splits)
+    fold_of = fold_of_rows(labeled, folds)
+    proba = np.zeros((len(labeled), len(categories)), dtype=float)
+    for fold in np.unique(fold_of):
+        held = fold_of == fold
+        model = fit(labeled.loc[~held], categories, config)
+        proba[held] = model.predict_proba(labeled.loc[held, "text"])
+    return proba, folds
 
 
 def cross_validate(
@@ -217,19 +208,19 @@ def cross_validate(
     categories=PRIORITY_CATEGORIES,
     config: BaselineConfig = DEFAULT_CONFIG,
     n_splits: int = 5,
+    folds: pd.DataFrame | None = None,
+    thresholds=None,
 ) -> pd.DataFrame:
     """Out-of-fold metrics on one split, with folds grouped by contract.
 
-    Chunks from one contract overlap by 128 tokens, so splitting by chunk would leak.
-    This is the number to use for any tuning; the test split stays untouched.
+    Chunks from one contract overlap by 128 tokens, so splitting by chunk would
+    leak. This is the number to use for any tuning; the test split stays
+    untouched. Use :func:`out_of_fold_proba` when the scores themselves are
+    needed, for instance to choose thresholds.
     """
     categories = list(categories)
     labels, mask = _arrays(labeled, categories)
-    proba = np.zeros(labels.shape, dtype=float)
-    groups = labeled["contract"].to_numpy()
-    for train_rows, held_rows in GroupKFold(n_splits=n_splits).split(
-        labeled, groups=groups
-    ):
-        model = fit(labeled.iloc[train_rows], categories, config)
-        proba[held_rows] = model.predict_proba(labeled["text"].iloc[held_rows])
-    return score(labels, mask, proba, categories, config.threshold)
+    proba, _ = out_of_fold_proba(labeled, categories, config, n_splits, folds)
+    if thresholds is None:
+        thresholds = config.threshold
+    return score(labels, mask, proba, categories, thresholds)
