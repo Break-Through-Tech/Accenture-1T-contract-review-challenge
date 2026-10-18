@@ -103,8 +103,10 @@ contract overlap by 128 tokens. Use these numbers, not the test ones, for any tu
   positive in two overlapping chunks.
 - Five of the 737 test annotations are not fully inside any chunk, so no chunk-level
   model can be credited for them.
-- A single 0.5 threshold is used for all categories. Per-category thresholds chosen on
-  the cross-validation folds would likely help the low-recall categories.
+- A single 0.5 threshold is used for all categories. Task #9 tuned one threshold per
+  category on the cross-validation folds: it gained 0.023 macro F1 there and lost
+  0.017 on test, so these numbers stand as the baseline. See
+  [the tuned baseline](tuned-baseline.md).
 - Bag-of-words ignores word order beyond two-word phrases, negation scope and defined
   terms.
 

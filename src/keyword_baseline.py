@@ -22,8 +22,8 @@ import numpy as np
 import pandas as pd
 
 from src.cuad_data import PRIORITY_CATEGORIES
+from src.evaluation import score
 from src.labeling import label_arrays
-from src.tfidf_baseline import score
 
 # Generic building blocks, reused across categories.
 ANY = r"[\s\S]"  # any character, including newlines
@@ -364,7 +364,7 @@ def evaluate(
     labels, mask = label_arrays(labeled, len(categories))
     hits = rule_hits(labeled["text"], rules)
     scores = category_scores(hits, rules, categories)
-    metrics = score(labels, mask, scores, categories, threshold=1)
+    metrics = score(labels, mask, scores, categories, thresholds=1)
 
     rows = []
     for j, rule in enumerate(rules):

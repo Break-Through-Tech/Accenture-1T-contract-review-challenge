@@ -1,0 +1,87 @@
+{
+  "task": 9,
+  "config": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95,
+    "sublinear_tf": true,
+    "lowercase": true,
+    "C": 10.0,
+    "class_weight": "balanced",
+    "threshold": 0.5,
+    "seed": 42
+  },
+  "categories": [
+    "Cap On Liability",
+    "Uncapped Liability",
+    "Governing Law",
+    "Anti-Assignment",
+    "Change Of Control",
+    "Termination For Convenience",
+    "Exclusivity",
+    "Non-Compete",
+    "Renewal Term",
+    "Audit Rights"
+  ],
+  "scikit_learn_version": "1.9.1",
+  "train_labeled_chunks_sha256": "f7b7c43c41e24d0814f04a100e3819a1166618713ca72f549eb43f3f13898df3",
+  "test_labeled_chunks_sha256": "8acfbae4c652c915c246222f6c7d87c2ed5d2f73c943dbed599b71d415e2861b",
+  "train": {
+    "contracts": 408,
+    "chunks": 14266
+  },
+  "test": {
+    "contracts": 102,
+    "chunks": 3096
+  },
+  "cv_folds": 5,
+  "cv_grouped_by": "contract",
+  "fold_chunk_counts": {
+    "0": 2854,
+    "1": 2853,
+    "2": 2853,
+    "3": 2853,
+    "4": 2853
+  },
+  "fold_contract_counts": {
+    "0": 82,
+    "1": 81,
+    "2": 81,
+    "3": 82,
+    "4": 82
+  },
+  "threshold_grid": {
+    "start": 0.05,
+    "stop": 0.95,
+    "step": 0.01,
+    "size": 91
+  },
+  "tuned_on": "out-of-fold training predictions",
+  "thresholds": {
+    "Cap On Liability": 0.5,
+    "Uncapped Liability": 0.58,
+    "Governing Law": 0.5,
+    "Anti-Assignment": 0.57,
+    "Change Of Control": 0.45,
+    "Termination For Convenience": 0.49,
+    "Exclusivity": 0.28,
+    "Non-Compete": 0.17,
+    "Renewal Term": 0.54,
+    "Audit Rights": 0.33
+  },
+  "macro_f1": {
+    "train_cv_default": 0.6498,
+    "train_cv_tuned": 0.6729,
+    "test_default": 0.6833,
+    "test_tuned": 0.6663
+  },
+  "micro_f1": {
+    "train_cv_default": 0.7178,
+    "train_cv_tuned": 0.7135,
+    "test_default": 0.7155,
+    "test_tuned": 0.6916
+  }
+}
