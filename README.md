@@ -31,13 +31,25 @@
 
 ## 👩🏽‍💻 **Setup and Installation**
 
-**Provide step-by-step instructions so someone else can run your code and reproduce your results. Depending on your setup, include:**
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once, clone this repository, and open a terminal in the project folder. Install all project and development dependencies with one command:
 
-* How to clone the repository
-* How to install dependencies
-* How to set up the environment
-* How to access the dataset(s)
-* How to run the notebook or scripts
+```sh
+uv sync --locked --dev
+```
+
+This creates a local `.venv` and installs the versions recorded in `uv.lock`, including PyTorch, Transformers, Accelerate, notebook support, and test tools. Python 3.12 or newer is required; uv can download a compatible Python version if needed.
+
+Run commands through `uv run` to use the project environment, for example:
+
+```sh
+uv run pytest
+```
+
+For notebooks in VS Code, select `.venv` as the Python interpreter and notebook kernel. For GPU training in Colab, enable a GPU runtime and use a CUDA-compatible PyTorch installation.
+
+Dependencies are maintained in `pyproject.toml` and `uv.lock`. When adding a package, run `uv add <package>` (or `uv add --dev <package>` for development tools), and commit both files so teammates receive the update on their next sync. The empty `requirements.txt` is not used for installation.
+
+Datasets, pretrained model downloads, and generated files such as `folds.csv` are separate from dependency installation. See [data/README.md](data/README.md) for data setup.
 
 ---
 

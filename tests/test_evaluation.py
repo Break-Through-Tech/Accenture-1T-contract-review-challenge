@@ -19,6 +19,23 @@ from src.evaluation import (
 CATS = ["Governing Law", "Audit Rights"]
 
 
+def test_score_category_with_no_valid_entries():
+    labels = np.array([[1, 0], [0, 0]])
+    mask = np.array([[True, False], [True, False]])
+    table = score(labels, mask, labels.astype(float), categories=CATS).set_index("category")
+    assert table.loc["Audit Rights", "scored_chunks"] == 0
+    assert np.isnan(table.loc["Audit Rights", "f1"])
+    assert table.loc["macro avg", "f1"] == 1
+    assert table.loc["micro avg", "f1"] == 1
+
+
+def test_score_all_entries_masked():
+    labels = np.zeros((2, 2), dtype=int)
+    table = score(labels, labels.astype(bool), labels.astype(float), categories=CATS)
+    assert table.scored_chunks.eq(0).all()
+    assert table.f1.isna().all()
+
+
 def chunks(contracts) -> pd.DataFrame:
     """Minimal chunk table: one row per entry, labels/masks unused by folds."""
     return pd.DataFrame({"contract": list(contracts)})

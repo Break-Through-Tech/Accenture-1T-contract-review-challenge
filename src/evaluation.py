@@ -161,9 +161,12 @@ def score(
     for i, category in enumerate(categories):
         keep = mask[:, i]
         y, p = labels[keep, i], pred[keep, i]
-        precision, recall, f1, _ = precision_recall_fscore_support(
-            y, p, average="binary", zero_division=0
-        )
+        if len(y):
+            precision, recall, f1, _ = precision_recall_fscore_support(
+                y, p, average="binary", zero_division=0
+            )
+        else:
+            precision = recall = f1 = float("nan")
         ap = average_precision_score(y, proba[keep, i]) if y.any() else float("nan")
         rows.append(
             {
@@ -182,9 +185,12 @@ def score(
     table = pd.DataFrame(rows, columns=METRIC_COLUMNS)
 
     y, p = labels[mask], pred[mask]
-    precision, recall, f1, _ = precision_recall_fscore_support(
-        y, p, average="binary", zero_division=0
-    )
+    if len(y):
+        precision, recall, f1, _ = precision_recall_fscore_support(
+            y, p, average="binary", zero_division=0
+        )
+    else:
+        precision = recall = f1 = float("nan")
     counts = {
         c: int(table[c].sum())
         for c in ("support", "scored_chunks", "masked_chunks", "predicted_positive")
