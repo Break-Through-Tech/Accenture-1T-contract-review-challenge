@@ -1,0 +1,17 @@
+{
+  "bert": {
+    "model": "google-bert/bert-base-uncased",
+    "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "vocab_size": 30522
+  },
+  "legal-bert": {
+    "model": "nlpaueb/legal-bert-base-uncased",
+    "revision": "15b570cbf88259610b082a167dacc190124f60f6",
+    "vocab_size": 30522
+  },
+  "deberta-v3": {
+    "model": "microsoft/deberta-v3-base",
+    "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+    "vocab_size": 128001
+  }
+}

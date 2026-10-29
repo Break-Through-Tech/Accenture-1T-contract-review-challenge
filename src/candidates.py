@@ -126,7 +126,7 @@ class EncoderClassifier(nn.Module):
     def from_pretrained(cls, candidate: Candidate, revision, *, local_files_only=False):
         encoder = AutoModel.from_pretrained(
             candidate.model, revision=revision, local_files_only=local_files_only
-        )
+        ).float()  # some checkpoints load as float16; train in float32
         return cls(encoder)
 
     def forward(
