@@ -1,0 +1,4 @@
+candidate,chunks,total_tokens,mean,median,p95,p99,max,over_limit,over_limit_pct,positives_total,positives_in_over_limit,tokens_vs_bert
+bert,14266,6350266,445.1,468.0,511.0,512.0,512,0,0.0,3254,0,1.0
+legal-bert,14266,6240367,437.4,456.0,514.0,530.0,635,801,5.615,3254,107,0.9827
+deberta-v3,14266,6129772,429.7,449.0,502.0,516.0,656,214,1.5,3254,26,0.9653
