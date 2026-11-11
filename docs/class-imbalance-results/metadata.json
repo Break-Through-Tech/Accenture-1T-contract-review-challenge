@@ -1,0 +1,57 @@
+{
+  "task": 12,
+  "decision": {
+    "pick": "pos_weight",
+    "macro_f1_leader": "pos_weight",
+    "tied_on_macro_f1": [
+      "pos_weight"
+    ],
+    "weak_f1_leader": "pos_weight",
+    "tied_after_weak_f1": [
+      "pos_weight"
+    ],
+    "decided_by": "macro_f1",
+    "clearly_beats_control_macro_f1": true,
+    "clearly_beats_control_weak_f1": true,
+    "clearly_worse_than_control_macro_f1": false
+  },
+  "folds_compared": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "folds_expected": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "runs_ignored_incomplete_fold": [],
+  "seed": 42,
+  "bootstrap_samples": 2000,
+  "fixes": [
+    "pos_weight",
+    "focal",
+    "downsample"
+  ],
+  "control": "bce",
+  "weak_categories": [
+    "Change Of Control",
+    "Termination For Convenience",
+    "Exclusivity",
+    "Non-Compete"
+  ],
+  "contracts": 408,
+  "chunks": 14023,
+  "encoder": "nlpaueb/legal-bert-base-uncased",
+  "revision": "15b570cbf88259610b082a167dacc190124f60f6",
+  "epochs": 1,
+  "batch_size": 8,
+  "learning_rate": 2e-05,
+  "labels_sha256": "3c48a0174374c23b590559669bf57efa7f95dba373a6888b9b64084a22525b4e",
+  "folds_sha256": "cc95f3cf3419c9e9e13959c733cafa8ebacbda25c8a3ff5663cb405aea323ed7",
+  "official_test_split_used": false
+}
