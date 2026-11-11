@@ -32,12 +32,15 @@ class Candidate:
     revision: str | None  # None: resolved to the current commit SHA at run time
 
 
-# bert is pinned to the exact revision the chunks were built with. The other two
-# resolve to a commit SHA at run time, which is recorded in every result file;
-# paste those SHAs here to pin them once a winner is chosen.
+# bert is pinned to the exact revision the chunks were built with, and legal-bert to
+# the revision task #11 selected (docs/model-selection.md). deberta-v3 resolves to a
+# commit SHA at run time, which is recorded in every result file.
 CANDIDATES = {
     "bert": Candidate("bert", TOKENIZER_MODEL, TOKENIZER_REVISION),
-    "legal-bert": Candidate("legal-bert", "nlpaueb/legal-bert-base-uncased", None),
+    "legal-bert": Candidate(
+        "legal-bert", "nlpaueb/legal-bert-base-uncased",
+        "15b570cbf88259610b082a167dacc190124f60f6",
+    ),
     "deberta-v3": Candidate("deberta-v3", "microsoft/deberta-v3-base", None),
 }
 

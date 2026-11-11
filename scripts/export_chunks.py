@@ -22,7 +22,15 @@ from src.chunking import (
 from src.cuad_data import DATA_DIR, RAW_FILES, build_split
 
 
-def export_split(split: str, output_dir: Path, *, tokenizer, raw_dir: Path = DATA_DIR):
+def export_split(
+    split: str,
+    output_dir: Path,
+    *,
+    tokenizer,
+    raw_dir: Path = DATA_DIR,
+    tokenizer_name: str = TOKENIZER_MODEL,
+    tokenizer_revision: str = TOKENIZER_REVISION,
+):
     """Build from source, validate, write Parquet, and verify the saved table."""
     source = build_split(split, raw_dir=raw_dir)
     config = ChunkingConfig()
@@ -50,8 +58,8 @@ def export_split(split: str, output_dir: Path, *, tokenizer, raw_dir: Path = DAT
     metadata = {
         "split": split,
         "config": asdict(config),
-        "tokenizer": TOKENIZER_MODEL,
-        "tokenizer_revision": TOKENIZER_REVISION,
+        "tokenizer": tokenizer_name,
+        "tokenizer_revision": tokenizer_revision,
         "tokenizers_version": version("tokenizers"),
         "source_sha256": hashlib.sha256(
             (raw_dir / RAW_FILES[split]).read_bytes()
