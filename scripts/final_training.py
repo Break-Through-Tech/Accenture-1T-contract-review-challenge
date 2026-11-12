@@ -227,7 +227,8 @@ def run_select(args) -> dict:
     thresholds = final_thresholds(rows, fold_of, configs[decision["pick"]])
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    summary.round(4).to_csv(args.output_dir / "sweep_summary.csv", index=False)
+    rounded = summary.round({c: 4 for c in summary.columns if c != "learning_rate"})
+    rounded.to_csv(args.output_dir / "sweep_summary.csv", index=False)  # keep lr unrounded
     pairs.round(4).to_csv(args.output_dir / "sweep_pairwise_bootstrap.csv", index=False)
     per_category[decision["pick"]].round(4).reset_index().to_csv(
         args.output_dir / "cv_per_category.csv", index=False)
@@ -250,7 +251,7 @@ def run_select(args) -> dict:
         "official_test_split_used": False,
     }
     write_json(args.output_dir / "selection.json", selection)
-    print(summary.round(4).to_string(index=False))
+    print(rounded.to_string(index=False))
     print(json.dumps(decision, indent=2))
     print(thresholds[["category", "threshold", "f1", "fold_threshold_std", "flag"]].to_string(index=False))
     return selection
