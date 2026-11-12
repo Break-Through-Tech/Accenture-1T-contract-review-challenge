@@ -1,0 +1,7 @@
+arm_a,arm_b,metric,difference,ci_low,ci_high
+lr2e-05-ep1,lr2e-05-ep2,macro_f1,-0.0715,-0.0856,-0.0577
+lr2e-05-ep1,lr2e-05-ep2,weak_f1,-0.1319,-0.159,-0.1055
+lr2e-05-ep1,lr2e-05-ep3,macro_f1,-0.0811,-0.0961,-0.0659
+lr2e-05-ep1,lr2e-05-ep3,weak_f1,-0.1449,-0.1738,-0.1152
+lr2e-05-ep2,lr2e-05-ep3,macro_f1,-0.0097,-0.0189,-0.0006
+lr2e-05-ep2,lr2e-05-ep3,weak_f1,-0.0131,-0.0305,0.0058

@@ -1,0 +1,51 @@
+{
+  "task": 13,
+  "decision": {
+    "pick": "lr2e-05-ep3",
+    "learning_rate": 2e-05,
+    "epochs": 3,
+    "leader": "lr2e-05-ep3",
+    "tied_with_leader": [
+      "lr2e-05-ep3"
+    ],
+    "decided_by": "macro_f1"
+  },
+  "arm": "pos_weight",
+  "encoder": "nlpaueb/legal-bert-base-uncased",
+  "revision": "15b570cbf88259610b082a167dacc190124f60f6",
+  "batch_size": 8,
+  "schedule_epochs": 3,
+  "seed": 42,
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "learning_rates_compared": [
+    2e-05
+  ],
+  "learning_rates_incomplete": [],
+  "thresholds": {
+    "Cap On Liability": 0.93,
+    "Uncapped Liability": 0.94,
+    "Governing Law": 0.71,
+    "Anti-Assignment": 0.88,
+    "Change Of Control": 0.68,
+    "Termination For Convenience": 0.9,
+    "Exclusivity": 0.88,
+    "Non-Compete": 0.86,
+    "Renewal Term": 0.95,
+    "Audit Rights": 0.95
+  },
+  "flagged_categories": {
+    "Uncapped Liability": "low support",
+    "Anti-Assignment": "unstable threshold",
+    "Change Of Control": "low support",
+    "Non-Compete": "low support"
+  },
+  "labels_sha256": "3c48a0174374c23b590559669bf57efa7f95dba373a6888b9b64084a22525b4e",
+  "folds_sha256": "cc95f3cf3419c9e9e13959c733cafa8ebacbda25c8a3ff5663cb405aea323ed7",
+  "official_test_split_used": false
+}

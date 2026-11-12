@@ -1,0 +1,11 @@
+category,threshold,support,f1,precision,recall,default_threshold,default_f1,f1_gain,fold_threshold_min,fold_threshold_max,fold_threshold_std,flag
+Cap On Liability,0.93,529,0.85,0.8954,0.8091,0.5,0.8384,0.0117,0.93,0.93,0.0,
+Uncapped Liability,0.94,150,0.7195,0.7124,0.7267,0.5,0.6331,0.0864,0.88,0.98,0.039,low support
+Governing Law,0.71,497,0.9703,0.9552,0.9859,0.5,0.9665,0.0038,0.65,0.71,0.0268,
+Anti-Assignment,0.88,527,0.8495,0.8585,0.8406,0.5,0.8435,0.006,0.55,0.88,0.179,unstable threshold
+Change Of Control,0.68,180,0.6268,0.6433,0.6111,0.5,0.5979,0.0288,0.68,0.73,0.0224,low support
+Termination For Convenience,0.9,234,0.7724,0.7551,0.7906,0.5,0.7303,0.0422,0.84,0.9,0.0295,
+Exclusivity,0.88,309,0.6945,0.7172,0.6731,0.5,0.6657,0.0288,0.83,0.93,0.0356,
+Non-Compete,0.86,197,0.624,0.6573,0.5939,0.5,0.5967,0.0273,0.86,0.91,0.0274,low support
+Renewal Term,0.95,209,0.8281,0.8382,0.8182,0.5,0.7975,0.0306,0.72,0.96,0.0991,
+Audit Rights,0.95,426,0.8335,0.8157,0.8521,0.5,0.8099,0.0236,0.95,0.96,0.0055,

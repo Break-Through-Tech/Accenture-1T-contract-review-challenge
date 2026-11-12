@@ -1,0 +1,29 @@
+{
+  "task": 13,
+  "scored_at": "2026-11-12T22:21:03+00:00",
+  "checkpoint": "/kaggle/working/task13/final_model/checkpoint",
+  "smoke": false,
+  "test_contracts": 102,
+  "test_chunks": 3029,
+  "valid_label_entries": 30184,
+  "positive_entries": 721,
+  "macro_f1": 0.8026,
+  "micro_f1": 0.8285,
+  "macro_average_precision": 0.831,
+  "macro_f1_at_0.5": 0.7681,
+  "test_bce": 0.04578888293218029,
+  "thresholds": {
+    "Cap On Liability": 0.93,
+    "Uncapped Liability": 0.94,
+    "Governing Law": 0.71,
+    "Anti-Assignment": 0.88,
+    "Change Of Control": 0.68,
+    "Termination For Convenience": 0.9,
+    "Exclusivity": 0.88,
+    "Non-Compete": 0.86,
+    "Renewal Term": 0.95,
+    "Audit Rights": 0.95
+  },
+  "labels_sha256": "daef9da4a62e034ea6b284b0a3338fd1829260a17b76f318e4deb375c1d9ddf5",
+  "second_run": false
+}

@@ -1,0 +1,4 @@
+config,learning_rate,epochs,macro_f1,weak_f1,macro_precision,macro_recall,macro_average_precision,micro_f1
+lr2e-05-ep1,2e-05,1,0.684,0.5239,0.6603,0.7172,0.6946,0.7424
+lr2e-05-ep2,2e-05,2,0.7554,0.6558,0.7423,0.7717,0.7769,0.7928
+lr2e-05-ep3,2e-05,3,0.7651,0.6688,0.7718,0.76,0.7862,0.806
