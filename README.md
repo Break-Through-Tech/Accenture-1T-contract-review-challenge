@@ -1,20 +1,16 @@
-# AI Studio Challenge Project Title
-
-> 💡 **Note for the team:** This is just a template. Update the above title with your AI Studio Challenge Project name. Remove all guidance notes and example text in this template and populate this README with your own content. You can work on this README throughout AI Studio, and get feedback from your AI Studio Coach and Challenge Advisor before finalizing it.  
-
----
+# Accenture 1T Contract Review Challenge
 
 ### 👥 **Team Members**
 
-**Example:**
-
 | Name             | GitHub Handle | Contribution                                                             |
 |------------------|---------------|--------------------------------------------------------------------------|
-| Taylor Nguyen    | @taylornguyen | Data exploration, visualization, overall project coordination            |
-| Jordan Ramirez   | @jramirez     | Data collection, exploratory data analysis (EDA), dataset documentation  |
-| Amina Hassan     | @aminahassan  | Data preprocessing, feature engineering, data validation                 |
-| Priya Mehta      | @pmehta       | Model selection, hyperparameter tuning, model training and optimization  |
-| Chris Park       | @chrispark    | Model evaluation, performance analysis, results interpretation           |
+| Nia Bardavelidze     | @NiaBiaCodes    | TBD |
+| Thierno Diallo       | @nothier7       | TBD |
+| Arpita Goradia       | @arpita-goradia | TBD |
+| Inika Goyal          | @Inika-Goyal    | TBD |
+| Nia Lam              | @nlam50         | TBD |
+| Stephanie Nicolaescu | @snic29         | TBD |
+| Wayne Simmons        | @WayneS0628     | TBD |
 
 ---
 
