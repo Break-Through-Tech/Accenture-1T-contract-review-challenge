@@ -261,4 +261,4 @@ Code license to be confirmed with our Challenge Advisor. The CUAD data is licens
 
 ## 🙏 Acknowledgements
 
-Thank you to our Challenge Advisor **Lipika Mukherjee** (Accenture), our AI Studio Coach **Shweta Malabade**, and the Break Through Tech AI team for their guidance and support.
+Thank you to our Challenge Advisor **Lipika Mukherjee** (Accenture), our AI Studio Coach **Julio Contreras**, and the Break Through Tech AI team for their guidance and support.
