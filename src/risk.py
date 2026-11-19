@@ -35,6 +35,63 @@ def level_for(score: int) -> str:
     return "Low"
 
 
+def score_clause(category: str, evidence: str, confidence: float | None = None) -> dict:
+    """Score one clause using the Task #17 rubric.
+
+    Confidence is accepted for callers that also have a model prediction, but
+    never changes risk points. The rubric's confidence review boundary requires
+    the model's frozen category threshold, which is intentionally not guessed
+    here.
+
+    Invalid categories or empty/non-string evidence return unset score and level
+    so callers can route the clause for human review.
+    """
+    if not isinstance(category, str) or category not in BASE:
+        return {
+            "risk_level": None,
+            "score": None,
+            "rationale": f"Unknown category {category!r}; review required.",
+        }
+    if not isinstance(evidence, str) or not evidence.strip():
+        return {
+            "risk_level": None,
+            "score": None,
+            "rationale": f"{category}: evidence is empty or invalid; review required.",
+        }
+
+    base = BASE[category]
+    rationale = [f"{category} base risk: {base} point(s)."]
+
+    # The rubric adds only the highest applicable adjustment once per clause.
+    # Keep the actual matched phrase in the explanation so a reviewer can
+    # verify why it fired.
+    matches = []
+    for adjustment in ADJUSTMENTS:
+        if category not in adjustment.categories:
+            continue
+        match = adjustment.regex.search(evidence)
+        if match:
+            matches.append((adjustment, match.group(0)))
+
+    if matches:
+        adjustment, trigger = max(matches, key=lambda item: item[0].points)
+        rationale.append(
+            f"+{adjustment.points} for {adjustment.why} Trigger: {trigger!r}."
+        )
+    else:
+        adjustment = None
+
+    score = base + (adjustment.points if adjustment else 0)
+    rationale.append(f"Total: {score} point(s), {level_for(score)} risk.")
+
+    # Confidence is an independent review signal, not a risk point. Since this
+    # API has no frozen category threshold, do not infer a review boundary.
+    if confidence is not None:
+        rationale.append("Model confidence does not change risk points.")
+
+    return {"risk_level": level_for(score), "score": score, "rationale": " ".join(rationale)}
+
+
 @dataclass(frozen=True)
 class Adjustment:
     name: str
