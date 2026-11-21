@@ -1,0 +1,35 @@
+{
+  "task": 18,
+  "predictions": "docs/final-model-results/test_predictions.parquet",
+  "predictions_sha256": "81de4d3a1fb4bc1851e56db0db4f971caa37bf817349a7fadea78cfecc0709b1",
+  "thresholds": {
+    "Cap On Liability": 0.93,
+    "Uncapped Liability": 0.94,
+    "Governing Law": 0.71,
+    "Anti-Assignment": 0.88,
+    "Change Of Control": 0.68,
+    "Termination For Convenience": 0.9,
+    "Exclusivity": 0.88,
+    "Non-Compete": 0.86,
+    "Renewal Term": 0.95,
+    "Audit Rights": 0.95
+  },
+  "test_contracts": 102,
+  "chunks": 3029,
+  "positive_windows": 747,
+  "register_entries": 497,
+  "windows_merged_away": 250,
+  "contracts_with_an_entry": 88,
+  "macro": {
+    "entries": 497,
+    "gold_clauses": 737,
+    "entry_precision": 0.8339,
+    "clause_recall": 0.8522,
+    "contracts_predicted": 380,
+    "contracts_with_clause": 387,
+    "contract_precision": 0.912,
+    "contract_recall": 0.8848,
+    "contract_f1": 0.8956,
+    "median_evidence_chars": 2664
+  }
+}
