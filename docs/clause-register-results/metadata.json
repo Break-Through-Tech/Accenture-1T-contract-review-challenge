@@ -1,0 +1,33 @@
+{
+  "task": 18,
+  "split": "test",
+  "contracts": 102,
+  "chunks_scored": 3029,
+  "clauses": 497,
+  "positive_chunks": 747,
+  "thresholds": {
+    "Cap On Liability": 0.93,
+    "Uncapped Liability": 0.94,
+    "Governing Law": 0.71,
+    "Anti-Assignment": 0.88,
+    "Change Of Control": 0.68,
+    "Termination For Convenience": 0.9,
+    "Exclusivity": 0.88,
+    "Non-Compete": 0.86,
+    "Renewal Term": 0.95,
+    "Audit Rights": 0.95
+  },
+  "review_margin": 0.1,
+  "model_scores": "Task #13 official test export (legal-bert + pos_weight, 3 epochs)",
+  "predictions_sha256": "81de4d3a1fb4bc1851e56db0db4f971caa37bf817349a7fadea78cfecc0709b1",
+  "test_run_sha256": "8dc33ce3c4a5b5ff7bd69865cff2ff7cc4317017c02d4b0fde414d8f40cb950b",
+  "sample_contracts": [
+    "ACCELERATEDTECHNOLOGIESHOLDINGCORP_04_24_2003-EX-10.13-JOINT VENTURE AGREEMENT",
+    "AFSALABANCORPINC_08_01_1996-EX-1.1-AGENCY AGREEMENT",
+    "AIRSPANNETWORKSINC_04_11_2000-EX-10.5-Distributor Agreement",
+    "ALCOSTORESINC_12_14_2005-EX-10.26-AGENCY AGREEMENT",
+    "AMBASSADOREYEWEARGROUPINC_11_17_1997-EX-10.28-ENDORSEMENT AGREEMENT"
+  ],
+  "full_register": "docs/clause-register-results/test_clause_register.parquet",
+  "full_register_jsonl": "data/interim/clause_register/test_clause_register.jsonl (not in Git)"
+}

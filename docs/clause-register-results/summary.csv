@@ -1,0 +1,12 @@
+category,positive_chunks,clauses,contracts_with_clause,gold_spans,clause_precision,span_recall,with_excerpt,excerpts_checked,excerpt_hits_gold,median_window_chars,median_excerpt_chars,needs_review
+Cap On Liability,106,69,46,118,0.8261,0.8983,0.5942,39,0.9744,2595.0,589.0,1
+Uncapped Liability,14,12,11,16,0.8333,0.6875,0.5833,7,0.7143,2480.5,522.0,0
+Governing Law,140,94,83,90,0.9149,0.9778,0.9255,80,0.9875,2829.5,499.0,0
+Anti-Assignment,130,87,70,137,0.8966,0.8832,0.8736,72,0.9722,2825.0,502.0,1
+Change Of Control,48,31,21,62,0.9032,0.7581,0.5806,17,0.9412,2593.0,628.5,0
+Termination For Convenience,42,32,27,41,0.7812,0.7073,0.5312,15,0.9333,2530.0,573.0,1
+Exclusivity,80,49,30,78,0.7143,0.8205,0.9184,34,0.8824,2627.0,519.0,0
+Non-Compete,59,42,27,59,0.7143,0.8983,0.6667,25,0.64,2604.0,506.0,0
+Renewal Term,42,30,29,31,0.8333,0.9677,0.6667,19,1.0,2693.0,539.0,0
+Audit Rights,86,51,36,105,0.9216,0.9238,0.8824,41,0.878,3377.0,590.0,0
+all,747,497,88,737,0.8471,0.8765,0.7726,349,0.9255,2666.0,522.5,3
