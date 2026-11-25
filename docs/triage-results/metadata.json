@@ -1,0 +1,115 @@
+{
+  "task": 19,
+  "split": "test",
+  "level_weight": {
+    "Low": 1.0,
+    "Medium": 1.0,
+    "High": 1.5
+  },
+  "missing_cap_points": 0.5,
+  "runs": {
+    "gold": {
+      "clauses": 731,
+      "clause_levels": {
+        "Medium": 376,
+        "Low": 339,
+        "High": 16
+      },
+      "clauses_for_review": 16,
+      "contracts": 102,
+      "contracts_with_high": 13,
+      "missing_cap_penalty": 58,
+      "cap_unresolved": 0,
+      "triage_score_median": 5.5,
+      "triage_score_max": 25.0,
+      "top5": [
+        {
+          "rank": 1,
+          "contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT",
+          "triage_score": 25.0,
+          "top_risks": "Uncapped Liability High (6) | Cap On Liability Medium (3) | Termination For Convenience Medium (3)"
+        },
+        {
+          "rank": 2,
+          "contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+          "triage_score": 19.0,
+          "top_risks": "Uncapped Liability High (4) | Termination For Convenience Medium (3) | Anti-Assignment Medium (2)"
+        },
+        {
+          "rank": 3,
+          "contract": "HarpoonTherapeuticsInc_20200312_10-K_EX-10.18_12051356_EX-10.18_Development Agreement",
+          "triage_score": 19.0,
+          "top_risks": "Uncapped Liability High (4) | Change Of Control Medium (3) | Anti-Assignment Medium (2)"
+        },
+        {
+          "rank": 4,
+          "contract": "SigaTechnologiesInc_20190603_8-K_EX-10.1_11695818_EX-10.1_Promotion Agreement",
+          "triage_score": 17.0,
+          "top_risks": "Uncapped Liability High (4) | Anti-Assignment Medium (2) | Exclusivity Medium (2)"
+        },
+        {
+          "rank": 5,
+          "contract": "PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement",
+          "triage_score": 15.0,
+          "top_risks": "Uncapped Liability High (4) | Anti-Assignment Medium (2) | Exclusivity Medium (2)"
+        }
+      ]
+    },
+    "model": {
+      "clauses": 497,
+      "clause_levels": {
+        "Low": 240,
+        "Medium": 238,
+        "High": 19
+      },
+      "clauses_for_review": 22,
+      "contracts": 102,
+      "contracts_with_high": 16,
+      "missing_cap_penalty": 55,
+      "cap_unresolved": 1,
+      "triage_score_median": 5.5,
+      "triage_score_max": 23.0,
+      "top5": [
+        {
+          "rank": 1,
+          "contract": "HarpoonTherapeuticsInc_20200312_10-K_EX-10.18_12051356_EX-10.18_Development Agreement",
+          "triage_score": 23.0,
+          "top_risks": "Termination For Convenience High (4) | Uncapped Liability High (4) | Change Of Control Medium (3)"
+        },
+        {
+          "rank": 2,
+          "contract": "SigaTechnologiesInc_20190603_8-K_EX-10.1_11695818_EX-10.1_Promotion Agreement",
+          "triage_score": 22.0,
+          "top_risks": "Termination For Convenience High (4) | Uncapped Liability High (4) | Anti-Assignment Medium (3)"
+        },
+        {
+          "rank": 3,
+          "contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+          "triage_score": 19.0,
+          "top_risks": "Uncapped Liability High (4) | Termination For Convenience Medium (3) | Anti-Assignment Medium (2)"
+        },
+        {
+          "rank": 4,
+          "contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT",
+          "triage_score": 16.0,
+          "top_risks": "Cap On Liability Medium (3) | Termination For Convenience Medium (3) | Anti-Assignment Medium (2)"
+        },
+        {
+          "rank": 5,
+          "contract": "PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement",
+          "triage_score": 15.0,
+          "top_risks": "Uncapped Liability High (4) | Anti-Assignment Medium (2) | Exclusivity Medium (2)"
+        }
+      ]
+    }
+  },
+  "gold_vs_model": {
+    "contracts": 102,
+    "spearman_triage_score": 0.8870646054140059,
+    "pearson_triage_score": 0.8795349862773183,
+    "mean_abs_rank_diff": 8.549019607843137,
+    "worst_level_agreement": 0.8431372549019608,
+    "top10_overlap": 0.8,
+    "top20_overlap": 0.65
+  }
+}
